@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Jani - Home</title>
+
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('shkrimi3.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Dashboard Styling */
+        .dashboard {
+            background-color: rgba(173, 216, 230, 0.9);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            height: 70px;
+        }
+
+        .dashboard .logo img {
+            width: 270px;
+            height: 270px;
+            cursor: pointer;
+            margin-top: 30px;
+            margin-left: -60px;
+        }
+
+        .dashboard .telephone {
+            color: #ffffff;
+            font-size: 13px;
+            margin-left: -60px;
+            margin-top: 85px;
+        }
+
+        .dashboard .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 29px;
+            color: #ffffff;
+            margin-left: 200px;
+        }
+
+        /* Menu Styling */
+        .menu-container {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 12px;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .menu-container a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .menu-container a:hover,
+        .menu-container a:active {
+            color: blue;
+        }
+
+        /* Content Styling */
+        .content {
+            padding: 20px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+            gap: 220px;
+            justify-content: center;
+            margin-top: 55px;
+        }
+
+        .aparatures {
+            position: relative;
+            width: 250px;
+            height: 380px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .aparatures img {
+            width: 150%;
+            height: 100%;
+            transition: opacity 0.3s;
+        }
+
+        .aparatures .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(169, 169, 169, 0.5);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .aparatures:hover .overlay {
+            opacity: 1;
+        }
+
+        .aparatures .overlay-text {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(128, 128, 128, 0.8);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .aparatures .description {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+            font-size: 18px;
+            line-height: 1.5;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background-color: rgba(224, 224, 224, 0.9);
+            padding: 20px;
+            margin-top: 60px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            flex-direction: column;
+            height: 50px;
+        }
+
+        .contact-box .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: -69px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            display: none;
+            flex-direction: row; /* Stack the icons are in a row */
+            position: absolute;
+            top: 20px;
+            left: 360px;
+            gap: 8px;
+        }
+
+        .social-icons img {
+            height: 30px;
+            width: 30px;
+        }
+
+        .social-icons img.instagram {
+            height: 45px;
+            width: 45px;
+            margin-top: -4px;
+        }
+
+        .emaili {
+            margin-left: 1300px;
+        }
+
+        .electro {
+            margin-left: -20px;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            
+
+            .aparatures {
+                width: 100%; /* Take full width on mobile */
+                height: auto;
+            }
+
+            .aparatures img {
+                width: 100%; /* Ensure the image takes full width */
+            }
+
+            .dashboard .logo img {
+            width: 160px;
+            height: 160px;
+            cursor: pointer;
+            margin-top:-25px;
+            margin-left: -40px;
+        }
+
+        .dashboard .telephone {
+            color: #ffffff;
+            font-size: 11px;
+            margin-left: -45px;
+            margin-top: 100px;
+            font-weight: bold;
+        }
+
+        .menu-container {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 5px;
+            margin-left: -700px;
+            position: relative;
+            margin-top: 85px;
+        }
+
+        .menu-container a {
+                color: white; /* White color for the letters */
+                text-decoration: none; /* Remove underline */
+                margin: 4px;
+                transition: color 0.3s;
+                font-size: 10px; /* Adjust font size as needed */
+                font-weight: bold; /* Make the text bold if needed */
+            
+            }
+
+            .menu-container a:hover,
+            .menu-container a:active {
+                color: blue; /* Change color on hover */
+            }
+
+
+        .dashboard .telephone {
+            color: #ffffff;
+            font-size: 9px;
+            margin-left: -120px;
+            margin-top: 35px;
+            font-weight: bold;
+
+        }
+
+        .dashboard .title {
+            margin-left: -310px;
+            font-size: 14px;
+            margin-top: 40;
+        }
+
+        .title {
+            margin-top: -40px;
+        }
+
+        .dashboard .social-media-icons {
+            margin-left: -130px;
+            margin-top: -60px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Light Blue Dashboard -->
+    <div class="dashboard">
+        <div class="logo" onclick="location.href='index.html';">
+            <img src="kidney.png" alt="Dr. Jani Logo">
+        </div>
+        <div class="telephone">Tel. +383 (44) 188-027</div>
+        <div class="title">Ordinanca Specialistike Urologjike</div>
+        <div class="menu-container">
+            <a href="index.html">BALLINA</a>
+            <a href="mjeku.html">MJEKU</a>
+            <a href="sherbimet.html">SHËRBIMET</a>
+            <a href="#blog">APARATURAT</a>
+            <a href="lokacioni.html">LOKACIONI</a>
+            <a href="#contact" id="kontakt-link">KONTAKTI</a>
+            <div class="social-icons" id="social-icons">
+                <img src="phone.png" alt="phone Icon">
+                <img class="instagram" src="insta (2).png" alt="Instagram Icon">
+                <img src="facebook (2).png" alt="Facebook Icon">
+            </div>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <div class="aparatures" onclick="toggleDescription(this)">
+            <img src="cistoskopi.png" alt="Dr. Jani Logo">
+            <div class="overlay"></div>
+            <div class="overlay-text">Shiko më shumë</div>
+            <div class="description" onmouseover="stayOpen(this)" onmouseout="closeDescription(this)">
+                Cistoskopia përdoret për të shqyrtuar fshikëzën dhe uretrën. Ndihmon në diagnostikimin e gurëve, infeksioneve, tumoreve dhe problemeve urinare.
+            </div>
+        </div>
+        <div class="aparatures" onclick="toggleDescription(this)">
+            <div class="electro">
+                <img src="electro.png" alt="Dr. Jani Logo">
+            </div>
+            <div class="overlay"></div>
+            <div class="overlay-text">Shiko më shumë</div>
+            <div class="description" onmouseover="stayOpen(this)" onmouseout="closeDescription(this)">
+                Electrocauteri në urologji ndalon gjakderdhjen dhe heq indet anormale gjatë operacioneve.
+            </div>
+        </div>
+        <div class="aparatures" onclick="toggleDescription(this)">
+            <img src="ultra.jpg" alt="Dr. Jani Logo">
+            <div class="overlay"></div>
+            <div class="overlay-text">Shiko më shumë</div>
+            <div class="description" onmouseover="stayOpen(this)" onmouseout="closeDescription(this)">
+                Ultrazëri në urologji diagnostikon gurë dhe tumore në veshka, probleme me prostatën dhe anomali riprodhuese.
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-box">
+        <div class="contact-info">
+            <span>Dr. Jani</span>
+            <span>Tel. +383 (44) 188 027</span>
+        </div>
+        <div class="emaili">Email: <a href="mailto:errisjusufi@gmail.com">errisjusufi@gmail.com</a></div>
+    </div>
+
+    <script>
+        // Toggle social media icons visibility on KONTAKTI click
+        document.getElementById('kontakt-link').addEventListener('click', function(event) {
+            event.preventDefault();
+            const socialIcons = document.getElementById('social-icons');
+            socialIcons.style.display = socialIcons.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Toggle description visibility
+        function toggleDescription(element) {
+            const description = element.querySelector('.description');
+            description.style.display = description.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Keep description open on hover
+        function stayOpen(element) {
+            element.style.display = 'block';
+        }
+
+        // Close description when mouse leaves
+        function closeDescription(element) {
+            element.style.display = 'none';
+        }
+
+        
+    </script>
+</body>
+</html>

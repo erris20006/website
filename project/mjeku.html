@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mjeku - Dr. Ardian Jusufi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('shkrimi3.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Dashboard Styling */
+        .dashboard {
+            background-color: #add8e6;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .dashboard .logo img {
+            width: 270px;
+            height: 270px;
+            cursor: pointer;
+            margin-top: 30px;
+            margin-left: -60px;
+        }
+
+        .dashboard .telephone {
+            color: #ffffff;
+            font-size: 13px;
+            margin-left: -60px;
+            margin-top: 85px;
+            font-style: bold;
+        }
+
+        .dashboard .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 29px;
+            color: #ffffff;
+            margin-left: 200px;
+        }
+
+        /* Menu Styling */
+        .menu-container {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 12px;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .menu-container a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .menu-container a:hover,
+        .menu-container a:active {
+            color: blue;
+        }
+
+        .social-media-icons {
+            display: none;
+            margin-top: 60px;
+            flex-direction: row;
+            align-items: center;
+            position: absolute;
+            z-index: 5;
+            padding: 0;
+            left: 310px;
+        }
+
+        .social-media-icons img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .social-media-icons img.instagram {
+            height: 45px;
+            width: 45px;
+        }
+
+        /* Content Styling */
+        .content {
+            padding: 20px;
+        }
+
+        .info-container {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        /* Left Side Styling (Dr. Ardian Jusufi) */
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 30px; /* Adjusted margin for spacing */
+        }
+
+        .doctor-rectangular {
+            width: 300px;
+            height: 500px;
+            background-color: #add8e6;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            border-radius: 8px;
+            position: relative;
+            margin-top: 25px;
+            left: 30px;
+        }
+
+        .name-box {
+            width: 100%;
+            background-color: #0e3a59;
+            text-align: center;
+            padding: 5px 0;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Right Side Styling (Info Boxes) */
+        .info-box {
+            background-color: #ffffff;
+            background-image: url('gjelbert.png'); /* Set the background image */
+            background-size: cover; /* Ensure the image covers the entire box */
+            background-position: center; /* Center the background image */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgb(255, 255, 255);
+            max-width: 270px;
+            margin-top: 25px;
+            margin-left: 65px; /* Adjust margin for spacing */
+            height: 460px;
+            color: white; /* Set text color to white */
+        }
+
+        .info-box h2 {
+            margin-top: 0;
+            color: white; /* Ensure header text is white */
+        }
+
+        .info-box p {
+            color: white; /* Ensure paragraph text is white */
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            
+
+            .info-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .info-box {
+            max-width: 100%;
+            margin-left: 0; /* Center each box */
+            margin-top: 20px; /* Space between stacked boxes */
+        }
+
+        .doctor-rectangular {
+            width: 350px;
+            height: 500px;
+            background-color: #add8e6;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            border-radius: 8px;
+            position: relative;
+            margin-top: 25px;
+            left: 15px;
+        }
+
+        .doctor-rectangular img {
+            width: 350px;
+            object-fit: cover;
+        }
+
+        /* Other mobile-specific adjustments (keep these) */
+        .aparatures {
+            width: 100%; /* Take full width on mobile */
+            height: auto;
+        }
+
+        .aparatures img {
+            width: 100%; /* Ensure the image takes full width */
+        }
+
+        .dashboard .logo img {
+            width: 160px;
+            height: 160px;
+            cursor: pointer;
+            margin-top: -25px;
+            margin-left: -40px;
+        }
+
+        .dashboard .telephone {
+            color: #ffffff;
+            font-size: 11px;
+            margin-left: -45px;
+            margin-top: 100px;
+            font-weight: bold;
+        }
+
+        .menu-container {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 5px;
+            margin-left: -700px;
+            position: relative;
+            margin-top: 85px;
+        }
+
+        .menu-container a {
+            color: white; /* White color for the letters */
+            text-decoration: none; /* Remove underline */
+            margin: 4px;
+            transition: color 0.3s;
+            font-size: 10px; /* Adjust font size as needed */
+            font-weight: bold; /* Make the text bold if needed */
+        
+        }
+
+        .menu-container a:hover,
+        .menu-container a:active {
+            color: blue; /* Change color on hover */
+        }
+
+        .dashboard .telephone {
+            color: #ffffff;
+            font-size: 9px;
+            margin-left: -120px;
+            margin-top: 35px;
+            font-weight: bold;
+        }
+
+        .dashboard .title {
+            margin-left: -310px;
+            font-size: 14px;
+            margin-top: 40;
+        }
+
+        .title {
+            margin-top: -40px;
+        }
+
+        .dashboard .social-media-icons {
+            margin-left: -100px;
+            margin-top: -60px;
+        }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Light Blue Dashboard -->
+    <div class="dashboard">
+        <div class="logo" onclick="location.href='index.html';">
+            <img src="kidney.png" alt="Dr. Jani Logo">
+        </div>
+        <div class="telephone">Tel. +383 (44) 188-027</div>
+        <div class="title">Ordinanca Specialistike Urologjike</div>
+        <div class="menu-container">
+            <a href="index.html">BALLINA</a>
+            <a href="mjeku.html">MJEKU</a>
+            <a href="sherbimet.html">SHËRBIMET</a>
+            <a href="blogu.html">APARATURAT</a>
+            <a href="lokacioni.html">LOKACIONI</a>
+            <a href="#contact" id="kontakt-link">KONTAKTI</a>
+            <div class="social-media-icons" id="social-media-icons">
+                <a href="tel:+38344188027">
+                    <img src="phone.png" alt="Phone Icon">
+                </a>
+                <a href="https://www.instagram.com/urologdrjani?igsh=MTRuNTM4ZHluN3c5" target="_blank">
+                    <img class="instagram" src="insta (2).png" alt="Instagram Icon">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61568166757732&mibextid=LQQJ4d" target="_blank">
+                    <img src="facebook (2).png" alt="Facebook Icon">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="info-container">
+            <!-- Left Side: Rectangular Image with Name Box -->
+            <div class="left-side">
+                <div class="doctor-rectangular">
+                    <img src="person.png" alt="Dr. Ardian Jusufi" style="width: 350px; height: 500px; object-fit: cover;">
+                    <div class="name-box">Dr. Ardian Jusufi</div>
+                </div>
+            </div>
+
+            <!-- Right Side: First Info Box -->
+            <div class="info-box">
+                <h2>Ardian Jusufi</h2>
+                <p>Ardian Jusufi, i lindur në vitin 1973 në Gjakovë, arsimin e mesëm e kreu në Gjimnazin e Shkencave Natyrore "Hajdar Dushi " ne qytetin e Gjakoves para se të vazhdonte studimet e larta në Universitetin e Mjekësisë në Prishtinë. Ai u specializua në Urologji në Universitetin e Sarajevës në Bosnje dhe Hercegovinë dhe e filloi karrierën e tij si Urolog në vitin 2004 ne Spitalin Raional "Isa Grezda" ne qytetin e Gjakoves ku gjate rrugëtimit të tij profesional, ai mbajti edhe postin e Kryeshefit Ekzekutiv në Spitalin Rajonal "Isa Grezda" në Gjakovë.
+                </p>
+                <p>
+            </div>
+
+            <!-- Right Side: Second Info Box (Duplicated) -->
+            <div class="info-box">
+                <h2>Ardian Jusufi</h2>
+                <p>Dr. Jusufi vazhdoi ngritjen e tije profesionale  në Spitalin e Urologjise ne qytetin e   Lyvenit në Belgjikë dhe ne  Spitalin e  Ispartas në Turqi. Eshtë anëtar i  i Shoqatës Evropiane të Urologjisë ku mori pjesë në mbi 30 Kongrese  në të gjithë Europën.
+                </p>
+                <p>
+            </div>
+
+            <!-- Right Side: Third Info Box (Duplicated) -->
+            <div class="info-box">
+                <h2>Ardian Jusufi</h2>
+                <p> Aktualisht, punon si specialist i urologjise në Spitalin e nderuar Turk "Medical Park" në Prishtinë, dhe njekohesisht vazhdon ta ushtroj  profesion  edhe ne ordinancen specialistike urologjike te tije  "  Dr. Jani", në Gjakovë.
+                </p>
+                <p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to toggle sidebar menu
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+        // Social media icons toggle function for KONTAKTI link
+        document.getElementById("kontakt-link").addEventListener("click", function() {
+            var icons = document.getElementById("social-media-icons");
+            if (icons.style.display === "flex") {
+                icons.style.display = "none";
+            } else {
+                icons.style.display = "flex";
+            }
+        });
+
+        // Hide icons when clicking outside
+        document.addEventListener("click", function(event) {
+            var icons = document.getElementById("social-media-icons");
+            var kontaktLink = document.getElementById("kontakt-link");
+            if (!kontaktLink.contains(event.target) && !icons.contains(event.target)) {
+                icons.style.display = "none";
+            }
+        });
+
+        const showSocialIcons = () => {
+            document.getElementById('social-media-icons').style.display = 'flex';
+        };
+    
+        document.getElementById('kontakt-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            showSocialIcons();
+        });
+    
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.social-media-icons') && !event.target.closest('#kontakt-link')) {
+                document.getElementById('social-media-icons').style.display = 'none';
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

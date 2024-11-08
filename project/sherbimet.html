@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shërbimet</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('shkrimi3.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Dashboard Styling */
+        .dashboard {
+            background-color: rgba(173, 216, 230, 0.9);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .dashboard .logo img {
+            width: 270px;
+            height: 270px;
+            cursor: pointer;
+            margin-top: 30px;
+            margin-left: -60px;
+        }
+
+        .dashboard .telephone {
+            color: #ffffff;
+            font-size: 12px;
+            margin-left: -60px;
+            margin-top: 85px;
+            font-style: bold;
+            font-size: 13px;
+        }
+
+        .dashboard .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 29px;
+            color: #ffffff;
+            margin-left: 200px;
+        }
+
+        /* Menu Styling */
+        .menu-container {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 12px;
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .menu-container a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .menu-container a:hover,
+        .menu-container a:active {
+            color: blue;
+        }
+
+        .social-media-icons {
+            display: none;
+            margin-top: 60px;
+            flex-direction: row;
+            align-items: center;
+            position: absolute;
+            z-index: 5;
+            padding: 10px 0;
+            left: 310px;
+        }
+
+        .social-media-icons img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .social-media-icons img.instagram {
+            height: 45px;
+            width: 45px;
+        }
+
+        /* Container and Box Styling */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .box {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 100%;
+            height: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box .content {
+            position: relative;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .box .overlay {
+            background-color: rgba(128, 128, 128, 0.7);
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+            display: block;
+        }
+
+        .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr; /* Stack boxes vertically on mobile */
+            }
+
+            .dashboard .logo img {
+                width: 160px;
+                height: 160px;
+                margin-top: -25px;
+                margin-left: -40px;
+            }
+
+            .dashboard .telephone {
+                font-size: 11px;
+                margin-left: -45px;
+                margin-top: 100px;
+                font-weight: bold;
+            }
+
+            .menu-container {
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            font-size: 5px;
+            margin-left: -700px;
+            position: relative;
+            margin-top: 85px;
+        }
+
+        .menu-container a {
+            color: white; /* White color for the letters */
+            text-decoration: none; /* Remove underline */
+            margin: 4px;
+            transition: color 0.3s;
+            font-size: 10px; /* Adjust font size as needed */
+            font-weight: bold; /* Make the text bold if needed */
+        }
+
+        .menu-container a:hover,
+        .menu-container a:active {
+            color: blue; /* Change color on hover */
+        }
+
+            .dashboard .telephone {
+                font-size: 9px;
+                margin-left: -120px;
+                margin-top: 35px;
+                font-weight: bold;
+            }
+
+            .dashboard .title {
+                margin-left: -310px;
+                font-size: 14px;
+            }
+
+            .title {
+                margin-top: -40px;
+            }
+
+            .dashboard .social-media-icons {
+                margin-left: -100px;
+                margin-top: -60px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Light Blue Dashboard -->
+    <div class="dashboard">
+        <div class="logo-container">
+            <div class="logo" onclick="location.href='index.html';">
+                <img src="kidney.png" alt="Dr. Jani Logo">
+            </div>
+            <div class="telephone">Tel. +383 (44) 188-027</div>
+        </div>
+        <div class="title">Ordinanca Specialistike Urologjike</div>
+        <div class="menu-container">
+            <a href="index.html">BALLINA</a>
+            <a href="mjeku.html">MJEKU</a>
+            <a href="#services">SHËRBIMET</a>
+            <a href="blogu.html">APARATURAT</a>
+            <a href="lokacioni.html">LOKACIONI</a>
+            <a href="#contact" id="kontakt-link">KONTAKTI</a>
+            <div class="social-media-icons" id="social-media-icons">
+                <a href="tel:+38344188027">
+                    <img src="phone.png" alt="Phone Icon">
+                </a>
+                <a href="https://www.instagram.com/urologdrjani?igsh=MTRuNTM4ZHluN3c5" target="_blank">
+                    <img class="instagram" src="insta (2).png" alt="Instagram Icon">
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61568166757732&mibextid=LQQJ4d" target="_blank">
+                    <img src="facebook (2).png" alt="Facebook Icon">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Box Container -->
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <img src="trakti urinar.png" alt="Eko e traktit urinar Image">
+                <div class="overlay">Eko e traktit urinar</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="testiset.png" alt="Eko e testiseve Image">
+                <div class="overlay">Eko e testiseve</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="prostata.jpg" alt="Eko transrektale e prostates Image">
+                <div class="overlay">Eko transrektale e prostates</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="katetet urinare.png" alt="Kateterizimi i katetereve urinare Image">
+                <div class="overlay">Kateterizimi i katetereve urinare</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="Ndërrimi i katetereve urinare.jpg" alt="Ndërrimi i katetereve urinare Image">
+                <div class="overlay">Ndërrimi i katetereve urinare</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="circumsioni.png" alt="Circumcisioni Image">
+                <div class="overlay">Circumcisioni</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="Ablationi i condilomave.pmg.jpg" alt="Ablationi i condilomave Image">
+                <div class="overlay">Ablationi i condilomave</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="Përpunimi the pastrimi i plagëve.png" alt="Përpunimi the pastrimi i plagëve Image">
+                <div class="overlay">Përpunimi the pastrimi i plagëve</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="Dilatatimi i uretrës.jpg" alt="Dilatatimi i uretrës Image">
+                <div class="overlay">Dilatatimi i uretrës</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="oncisioni i abseceve.png" alt="Incisioni i absceseve Image">
+                <div class="overlay">Incisioni i absceseve</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <img src="Uretroskopija.jpg" alt="Uretroskopija Image">
+                <div class="overlay">Uretroskopija</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const showSocialIcons = () => {
+            document.getElementById('social-media-icons').style.display = 'flex';
+        };
+    
+        document.getElementById('kontakt-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            showSocialIcons();
+        });
+    
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.social-media-icons') && !event.target.closest('#kontakt-link')) {
+                document.getElementById('social-media-icons').style.display = 'none';
+            }
+        });
+    </script>
+
+
+    
+
+    
+</body>
+</html>
